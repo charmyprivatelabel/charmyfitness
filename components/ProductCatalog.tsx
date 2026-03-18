@@ -10,13 +10,11 @@ const ProductCatalog: React.FC = () => {
   const pdfBaseUrl = "https://charmylingerie.com.br/wp-content/uploads/2026/02/Catalogo-Fitness-Charmy.pdf";
   
   const desktopImages = [
-    "https://charmylingerie.com.br/wp-content/uploads/2026/02/5-1.png",
-    "https://charmylingerie.com.br/wp-content/uploads/2026/02/6-1.png",
-    "https://charmylingerie.com.br/wp-content/uploads/2026/02/7-1.png",
-    "https://charmylingerie.com.br/wp-content/uploads/2026/02/8-1.png",
-    "https://charmylingerie.com.br/wp-content/uploads/2026/02/9.png",
-    "https://charmylingerie.com.br/wp-content/uploads/2026/02/10.png",
-    "https://charmylingerie.com.br/wp-content/uploads/2026/02/11.png"
+    "https://charmylingerie.com.br/wp-content/uploads/2026/03/df4d9fdf-62b2-4f10-962a-89b314fc722c-0003-scaled.webp",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/03/df4d9fdf-62b2-4f10-962a-89b314fc722c-0004-scaled.webp",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/03/df4d9fdf-62b2-4f10-962a-89b314fc722c-0005-scaled.webp",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/03/df4d9fdf-62b2-4f10-962a-89b314fc722c-0006-scaled.webp",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/03/df4d9fdf-62b2-4f10-962a-89b314fc722c-0009-scaled.webp"
   ];
 
   const mobileImages = [
