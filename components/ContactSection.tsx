@@ -23,15 +23,27 @@ const ContactSection: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', phone: '', message: '' });
-      
-      // Reset success message after 3 seconds
-      setTimeout(() => setSubmitStatus('idle'), 3000);
-    }, 1500);
+    const phoneNumber = "5535997301868";
+    const text = `Olá! Nova mensagem de contato do site:
+    
+*Nome:* ${formData.name}
+*E-mail:* ${formData.email}
+*Telefone:* ${formData.phone}
+
+*Mensagem:*
+${formData.message}`;
+
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
+    
+    // Open WhatsApp in a new tab
+    window.open(whatsappUrl, '_blank');
+
+    setIsSubmitting(false);
+    setSubmitStatus('success');
+    setFormData({ name: '', email: '', phone: '', message: '' });
+    
+    // Reset success message after 3 seconds
+    setTimeout(() => setSubmitStatus('idle'), 3000);
   };
 
   return (
