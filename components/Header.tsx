@@ -5,17 +5,48 @@ import { motion, AnimatePresence } from 'motion/react';
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+      setIsOpen(false);
+    }
+  };
+
+  const scrollToTop = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+    setIsOpen(false);
+  };
+
   return (
     <header className="fixed top-0 left-0 w-full z-50 text-white">
       <div className="bg-[#cd392b] backdrop-blur-md border-b border-white/10">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
           <div className="flex items-center space-x-2">
-            <img 
-              src="https://charmylingerie.com.br/wp-content/uploads/2026/01/logo-charmy.png#1938" 
-              alt="Charmy Logo" 
-              className="h-10 object-contain brightness-0 invert"
-              referrerPolicy="no-referrer"
-            />
+            <button 
+              onClick={scrollToTop}
+              className="cursor-pointer hover:opacity-80 transition-opacity"
+              aria-label="Voltar ao início"
+            >
+              <img 
+                src="https://charmylingerie.com.br/wp-content/uploads/2026/01/logo-charmy.png#1938" 
+                alt="Charmy Logo" 
+                className="h-10 object-contain brightness-0 invert"
+                referrerPolicy="no-referrer"
+              />
+            </button>
           </div>
 
           <nav className="hidden md:flex space-x-12 items-center">
@@ -23,6 +54,7 @@ const Header: React.FC = () => {
               <a
                 key={item}
                 href={`#${item.toLowerCase().replace(' ', '-')}`}
+                onClick={(e) => scrollToSection(e, item.toLowerCase().replace(' ', '-'))}
                 className="text-[11px] uppercase tracking-[0.2em] hover:text-white/70 transition-colors"
               >
                 {item}
@@ -60,7 +92,7 @@ const Header: React.FC = () => {
                 <a
                   key={item}
                   href={`#${item.toLowerCase().replace(' ', '-')}`}
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => scrollToSection(e, item.toLowerCase().replace(' ', '-'))}
                   className="text-[11px] uppercase tracking-[0.2em] hover:text-white/70 transition-colors"
                 >
                   {item}

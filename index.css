@@ -11,6 +11,14 @@
   --brand-dark: #1a1a1a;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 80px;
+}
+
 body {
   background-color: var(--bg-warm);
   color: var(--brand-dark);
