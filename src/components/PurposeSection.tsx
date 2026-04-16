@@ -29,7 +29,7 @@ const PurposeSection: React.FC = () => {
             className="order-1 md:order-2"
           >
             <span className="text-[10px] uppercase tracking-[0.4em] opacity-50 mb-4 block">O Propósito</span>
-            <h2 className="text-5xl serif mb-8 leading-tight">Lançamento <br /><span className="italic">Nova Linha Fitness</span></h2>
+            <h2 className="text-5xl serif mb-8 leading-tight">Da Charmy <br /><span className="italic">Nova Linha Fitness</span></h2>
             <div className="space-y-6 text-gray-600 leading-relaxed">
               <p>
                 É com grande entusiasmo que apresentamos novidades na nossa linha fitness aqui na Charmy. Sempre atentos às tendências do mercado e à crescente valorização desse segmento, seguimos ampliando o nosso portfólio com novos produtos desenvolvidos para oferecer ainda mais opções às marcas que confiam no nosso trabalho.
