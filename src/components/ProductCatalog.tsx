@@ -3,37 +3,89 @@ import { ChevronLeft, ChevronRight, ZoomIn, X } from 'lucide-react';
 
 const ProductCatalog: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
-  const [pageWidth, setPageWidth] = useState(350);
+  const [pageWidth, setPageWidth] = useState(245);
   const [isZoomOpen, setIsZoomOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   
   const pdfBaseUrl = "https://charmylingerie.com.br/wp-content/uploads/2026/02/Catalogo-Fitness-Charmy.pdf";
   
   const desktopImages = [
-    "https://charmylingerie.com.br/wp-content/uploads/2026/03/df4d9fdf-62b2-4f10-962a-89b314fc722c-0003-scaled.webp",
-    "https://charmylingerie.com.br/wp-content/uploads/2026/03/df4d9fdf-62b2-4f10-962a-89b314fc722c-0004-scaled.webp",
-    "https://charmylingerie.com.br/wp-content/uploads/2026/03/df4d9fdf-62b2-4f10-962a-89b314fc722c-0005-scaled.webp",
-    "https://charmylingerie.com.br/wp-content/uploads/2026/03/df4d9fdf-62b2-4f10-962a-89b314fc722c-0006-scaled.webp",
-    "https://charmylingerie.com.br/wp-content/uploads/2026/03/df4d9fdf-62b2-4f10-962a-89b314fc722c-0009-scaled.webp"
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-2.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-3.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-4.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-5.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-6.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-7.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-8.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-9.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-10.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-11.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-12.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-13.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-14.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-15.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-16.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-17.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-18.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-19.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-20.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-21.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-22.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-23.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-24.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-25.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-26.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-27.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-28.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-29.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-30.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-31.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-32.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-33.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-34.jpg"
   ];
 
   const mobileImages = [
-    "https://charmylingerie.com.br/wp-content/uploads/2026/03/Catalogo_fitness-1.webp",
-    "https://charmylingerie.com.br/wp-content/uploads/2026/03/Catalogo_fitness-2.webp",
-    "https://charmylingerie.com.br/wp-content/uploads/2026/03/Catalogo_fitness-3.webp",
-    "https://charmylingerie.com.br/wp-content/uploads/2026/03/Catalogo_fitness-4.webp",
-    "https://charmylingerie.com.br/wp-content/uploads/2026/03/Catalogo_fitness-5.webp",
-    "https://charmylingerie.com.br/wp-content/uploads/2026/03/Catalogo_fitness-6.webp",
-    "https://charmylingerie.com.br/wp-content/uploads/2026/03/Catalogo_fitness-7.webp",
-    "https://charmylingerie.com.br/wp-content/uploads/2026/03/Catalogo_fitness-8.webp",
-    "https://charmylingerie.com.br/wp-content/uploads/2026/03/Catalogo_fitness-9.webp"
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-2.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-3.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-4.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-5.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-6.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-7.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-8.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-9.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-10.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-11.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-12.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-13.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-14.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-15.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-16.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-17.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-18.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-19.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-20.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-21.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-22.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-23.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-24.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-25.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-26.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-27.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-28.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-29.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-30.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-31.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-32.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-33.jpg",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-34.jpg"
   ];
 
   const catalogImages = isMobile ? mobileImages : desktopImages;
 
   useEffect(() => {
     const handleResize = () => {
-      setPageWidth(Math.min(window.innerWidth - 48, 800));
+      setPageWidth(Math.min(window.innerWidth - 48, 800) * 0.7);
       const mobile = window.innerWidth < 768;
       if (mobile !== isMobile) {
         setIsMobile(mobile);
