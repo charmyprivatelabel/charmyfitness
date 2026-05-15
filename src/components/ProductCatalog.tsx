@@ -85,8 +85,9 @@ const ProductCatalog: React.FC = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setPageWidth(Math.min(window.innerWidth - 48, 800) * 0.7);
       const mobile = window.innerWidth < 768;
+      const multiplier = mobile ? 0.84 : 0.7;
+      setPageWidth(Math.min(window.innerWidth - 48, 800) * multiplier);
       if (mobile !== isMobile) {
         setIsMobile(mobile);
         setCurrentIndex(0); // Reset index when switching views to avoid out of bounds
@@ -183,7 +184,7 @@ const ProductCatalog: React.FC = () => {
             href={pdfBaseUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-black text-white px-12 py-5 text-[11px] uppercase tracking-[0.3em] hover:bg-gray-800 transition-all shadow-lg"
+            className="inline-block bg-red-600 text-white px-12 py-5 text-[11px] uppercase tracking-[0.3em] hover:bg-red-700 transition-all shadow-lg"
           >
             Baixar Catálogo Completo
           </a>
