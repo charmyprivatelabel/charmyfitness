@@ -33,9 +33,7 @@ const Hero: React.FC = () => {
           </p>
           <div className="flex flex-row gap-3 sm:gap-4 justify-start">
             <a 
-              href="https://charmylingerie.com.br/wp-content/uploads/2026/02/Catalogo-Fitness-Charmy.pdf" 
-              target="_blank" 
-              rel="noopener noreferrer"
+              href="#catálogo" 
               className="flex-1 sm:flex-none bg-white text-black px-2 py-4 sm:px-10 sm:py-5 rounded-xl font-bold uppercase tracking-widest sm:tracking-[0.2em] text-[10px] sm:text-sm hover:bg-[#E6B7B2] hover:text-white transition-all flex items-center justify-center text-center whitespace-nowrap"
             >
               Ver Catálogo

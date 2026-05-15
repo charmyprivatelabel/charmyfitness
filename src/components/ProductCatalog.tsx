@@ -7,7 +7,7 @@ const ProductCatalog: React.FC = () => {
   const [isZoomOpen, setIsZoomOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   
-  const pdfBaseUrl = "https://charmylingerie.com.br/wp-content/uploads/2026/02/Catalogo-Fitness-Charmy.pdf";
+  const pdfBaseUrl = "https://charmylingerie.com.br/wp-content/uploads/2026/05/Catalogo-Fitness-Charmy.pdf";
   
   const desktopImages = [
     "https://charmylingerie.com.br/wp-content/uploads/2026/05/cataogo-fitness-charmy-2.jpg",
